@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wallet Login</title>
+  <link rel="stylesheet" href="../style/global.css">
+  <link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="auth-card-body">
+        <h3 class="auth-card-title">💳 SmartWallet Login</h3>
+        <p class="auth-card-subtitle">Welcome back! Access your wallet.</p>
+        
+        <form id="login-form">
+          <div class="form-group">
+            <label for="loginIdentifier" class="form-label">Phone or Email</label>
+            <input type="text" class="form-control" id="loginIdentifier" value="1234567890" required>
+          </div>
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" value="password123" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+        </form>
+
+        <div id="auth-alert" class="d-none" role="alert"></div>
+        
+        <div class="auth-footer-link">
+          <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

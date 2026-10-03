@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile - SmartWallet</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../style/global.css">
+  <link rel="stylesheet" href="../style/index.css">
+  <style>
+    /* Use app card styles and center the widget */
+    .profile-page-wrapper { max-width: 760px; margin: 2.5rem auto; }
+    .profile-widget { padding: 1.25rem 1.5rem; }
+    .profile-row { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .profile-row .col { flex: 1; }
+    .form-label { display:block; margin-bottom:0.35rem; color:var(--text-primary); font-weight:600; }
+    .form-control { width:100%; padding:0.6rem; border:1px solid #e6e9ef; border-radius:8px; }
+    .form-actions { display:flex; gap:0.5rem; margin-top:1rem; }
+    .btn-primary { background:var(--gradient); color:#fff; padding:0.6rem 1rem; border:none; border-radius:8px; cursor:pointer; font-weight:600; }
+    .btn-secondary { background:#f3f4f6; color:var(--text-primary); padding:0.6rem 1rem; border:none; border-radius:8px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="profile-page-wrapper">
+    <div class="widget profile-widget">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.5rem;">
+        <div>
+          <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+          <h2 style="margin:0.25rem 0 0 0">Your Profile</h2>
+          <p class="text-muted" style="margin:0.25rem 0 1rem 0">View and update your profile details below.</p>
+        </div>
+      </div>
+
+      <form id="profile-form">
+      <div class="profile-row">
+        <div class="col">
+          <label class="form-label">First name</label>
+          <input type="text" id="fName" class="form-control" required disabled>
+        </div>
+        <div class="col">
+          <label class="form-label">Last name</label>
+          <input type="text" id="lName" class="form-control" disabled>
+        </div>
+      </div>
+
+      <div class="profile-row">
+        <div class="col">
+          <label class="form-label">Phone</label>
+          <input type="text" id="phone" class="form-control" required disabled>
+        </div>
+        <div class="col">
+          <label class="form-label">Email</label>
+          <input type="email" id="email" class="form-control" required disabled>
+        </div>
+      </div>
+
+      <div class="profile-row">
+        <div class="col">
+          <label class="form-label">Address</label>
+          <input type="text" id="address" class="form-control" disabled>
+        </div>
+      </div>
+
+      <div class="profile-row" id="pin-block" style="display:none;">
+        <div class="col">
+          <label class="form-label">Current Wallet PIN</label>
+          <input type="password" id="oldPin" class="form-control" maxlength="6" placeholder="Enter current PIN">
+        </div>
+        <div class="col">
+          <label class="form-label">New Wallet PIN</label>
+          <input type="password" id="newPin" class="form-control" maxlength="6" placeholder="6-digit new PIN">
+        </div>
+        <div class="col">
+          <label class="form-label">Confirm New PIN</label>
+          <input type="password" id="confirmNewPin" class="form-control" maxlength="6" placeholder="Confirm new PIN">
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="button" id="edit-btn" class="btn-primary">Edit</button>
+        <button type="submit" id="save-btn" class="btn-primary" style="display:none;">Save changes</button>
+        <button type="button" id="cancel-btn" class="btn-secondary" style="display:none;">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="main-alert" class="alert d-none" role="alert"></div>
+  <script src="../js/profile.js"></script>
+</body>
+</html>

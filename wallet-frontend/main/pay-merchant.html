@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pay Merchant - SmartWallet</title>
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Global styles -->
+  <link rel="stylesheet" href="../style/global.css">
+  <!-- Page-specific styles -->
+  <link rel="stylesheet" href="../style/pay-merchant.css">
+</head>
+<body>
+
+  <!-- Main Pay Merchant Container -->
+  <div class="pay-merchant-container">
+    
+    <!-- Left Panel: Merchant List -->
+    <div class="contact-list-panel">
+      <div class="panel-header">
+        <!-- Back button to return to dashboard -->
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        <h2>Pay Merchant</h2>
+        <p>Select a merchant to begin.</p>
+      </div>
+
+      <!-- Search Bar -->
+      <input type="text" id="search-bar" placeholder="Search by merchant name...">
+      
+      <!-- Data List Container -->
+      <div class="data-list-container">
+        <div class="data-list" id="data-list">
+          <div class="text-center text-muted" style="padding: 2rem;">Loading merchants...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel: Payment Form -->
+    <div class="payment-panel">
+
+      <!-- Hidden by default, shown when a user is clicked -->
+      <div id="payment-form-container" class="d-none">
+        <h4>Sending payment to:</h4>
+        <div class="receiver-info">
+          <!-- EDITED: Using store icon for merchants -->
+          <div class="avatar merchant" id="modal-receiver-initials">
+            <i class="fa-solid fa-store"></i>
+          </div>
+          <h3 id="modal-receiver-name">[Merchant Name]</h3>
+        </div>
+        
+        <form id="payment-form">
+          <!-- Hidden fields to store receiver info -->
+          <input type="hidden" id="modal-receiver-id">
+          <!-- EDITED: Value is now MERCHANT -->
+          <input type="hidden" id="modal-receiver-type" value="MERCHANT">
+
+          <div class="form-group">
+            <label for="amount" class="form-label">Amount (₹)</label>
+            <input type="number" step="0.01" class="form-control" id="amount" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label for="wallet-pin" class="form-label">Wallet PIN</label>
+            <input type="password" class="form-control" id="wallet-pin" placeholder="6-digit PIN" maxlength="6" required>
+          </div>
+          <div class="form-group">
+            <label for="description" class="form-label">Description (Optional)</label>
+            <input type="text" class="form-control" id="description" placeholder="e.g., Coffee order">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-primary">Send Payment</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Shown by default -->
+      <div id="payment-placeholder" class="payment-placeholder-content">
+        <i class="fa-solid fa-hand-pointer"></i>
+        <h3>Select a merchant</h3>
+        <p>Choose a merchant from the list to start a payment.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Global Alert -->
+  <div id="main-alert" class="alert d-none" role="alert"></div>
+
+  <!-- Page Logic -->
+  <script src="../js/pay-merchant.js"></script>
+</body>
+</html>

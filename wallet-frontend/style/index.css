@@ -1,0 +1,332 @@
+/* style/index.css */
+
+/* App Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: 2; /* Takes 2 parts of the space (40%) */
+  min-width: 400px; /* Won't shrink smaller than this */
+  background-color: var(--sidebar-bg);
+  color: var(--text-light);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  box-sizing: border-box;
+  flex-shrink: 0; 
+}
+
+.main-content {
+  flex: 3; /* Takes 3 parts of the space (60%) */
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Sidebar Header (User/Balance) */
+.sidebar-header {
+  margin-bottom: 2rem;
+}
+.wallet-card {
+  background: var(--gradient);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+.wallet-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+.wallet-card h6 {
+  opacity: 0.8;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+.wallet-card #user-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.wallet-card #wallet-balance {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* Sidebar Actions */
+.payment-actions {
+  margin-top: 2rem;
+}
+.payment-actions h5 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.action-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 12px;
+  padding: 1.25rem; 
+  text-align: center;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.action-btn i {
+  font-size: 1.75rem; 
+  margin-bottom: 0.75rem;
+  display: block;
+  line-height: 1;
+}
+
+/* --- WIDGET STYLES --- */
+.content-header {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.content-header h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+/* Profile button shown at top-right of content header */
+.profile-top-right {
+  position: absolute;
+  right: 2.5rem;
+  top: 1.5rem;
+}
+.profile-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.profile-btn .avatar-sm {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.widget {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+}
+.widget-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Quick Send Widget */
+.quick-send-list {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem; /* For scrollbar */
+}
+.quick-contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  width: 80px;
+}
+.quick-contact-item h6 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.avatar-sm {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.quick-contact-item:hover .avatar-sm {
+  transform: scale(1.05);
+}
+.quick-contact-item.add-new .avatar-sm {
+  background: none;
+  border: 2px dashed var(--accent-purple);
+  color: var(--accent-purple);
+}
+.quick-contact-item.add-new:hover .avatar-sm {
+  background: #f4f2ff;
+}
+
+/* EDITED: New Promo Widget Styles */
+.promo-widget {
+  background: var(--gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.promo-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.promo-text {
+  flex-grow: 1;
+}
+.promo-text h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.25rem;
+}
+.promo-text p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+.promo-btn {
+  background: white;
+  color: var(--accent-purple);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+.promo-btn:hover {
+  background-color: #f4f2ff;
+  transform: scale(1.03);
+}
+/* --- END OF EDIT --- */
+
+
+/* Global Alert */
+#main-alert {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  max-width: 90%;
+}
+#main-alert.alert-success { background-color: var(--success-bg); color: var(--success-text); }
+#main-alert.alert-danger { background-color: var(--danger-bg); color: var(--danger); }
+#main-alert.alert-info { background-color: var(--info-bg); color: var(--info-text); }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .app-container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    overflow-x: auto;
+    flex: none; 
+    min-width: 0;
+  }
+  .main-content {
+    padding: 1rem;
+    height: auto;
+    flex: none;
+  }
+  .sidebar-header {
+    flex-shrink: 0;
+    margin-right: 2rem;
+    margin-bottom: 0;
+  }
+  .wallet-card {
+    width: 280px;
+  }
+  .payment-actions {
+    margin-top: 0;
+  }
+  .actions-grid {
+    grid-template-columns: repeat(4, 1fr);
+    flex-shrink: 0;
+  }
+  /* EDITED: Promo widget stacking on mobile */
+  .promo-widget {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .sidebar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sidebar-header {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .wallet-card {
+    width: auto;
+  }
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,219 @@
+/* style/send.css */
+
+/* Import global styles */
+@import url('global.css');
+
+body {
+  overflow: hidden; /* Prevent body scroll */
+}
+
+/* Main Layout */
+.send-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.contact-list-panel {
+  flex: 2; /* Takes 40% of the space */
+  min-width: 400px;
+  background-color: var(--card-bg);
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e5e7eb;
+}
+
+.payment-panel {
+  flex: 3; /* Takes 60% of the space */
+  background-color: var(--primary-bg);
+  padding: 3rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Panel Header */
+.panel-header {
+  margin-bottom: 1.5rem;
+}
+.panel-header h2 {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+.panel-header p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+.back-btn {
+  font-weight: 500;
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.back-btn:hover {
+  text-decoration: underline;
+}
+.back-btn i {
+  margin-right: 0.25rem;
+}
+
+/* Search Bar */
+#search-bar {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Contact List (Copied from index.css) */
+.data-list-container {
+  background-color: var(--card-bg);
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.data-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.contact-item:hover {
+  background-color: #f9fafb;
+}
+/* Style for the selected user */
+.contact-item.selected {
+  background-color: var(--info-bg);
+  border-left: 4px solid var(--accent-purple);
+  padding-left: calc(1.5rem - 4px);
+}
+
+.contact-item:last-child {
+  border-bottom: none;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--gradient);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.contact-info h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-info p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Payment Panel Styles */
+.payment-placeholder-content {
+  text-align: center;
+  color: var(--text-secondary);
+}
+.payment-placeholder-content i {
+  font-size: 3rem;
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+#payment-form-container {
+  width: 100%;
+  max-width: 450px;
+}
+
+.receiver-info {
+  display: flex;
+  align-items: center;
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #e5e7eb;
+}
+.receiver-info h3 {
+  margin: 0;
+}
+
+/* Form Styles (Copied from login.css) */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  width: 100%;
+  background: var(--accent-purple);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Global Alert (Copied from index.css) */
+#main-alert {
+  position: fixed;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  box-shadow: var(--shadow-lg);
+  max-width: 90%;
+}
+#main-alert.alert-success { background-color: var(--success-bg); color: var(--success-text); }
+#main-alert.alert-danger { background-color: var(--danger-bg); color: var(--danger); }
+#main-alert.alert-info { background-color: var(--info-bg); color: var(--info-text); }

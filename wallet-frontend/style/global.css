@@ -1,0 +1,39 @@
+/* style/global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-bg: #f4f7f6;
+  --sidebar-bg: #1a1e2d; /* Dark background for sidebar */
+  --card-bg: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-light: #f9fafb;
+  --accent-purple: #667eea;
+  --accent-indigo: #764ba2;
+  --gradient: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-indigo) 100%);
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --danger: #EF4444;
+  --danger-bg: #FEE2E2;
+  --success-bg: #D1FAE5;
+  --success-text: #065F46;
+  --info-bg: #DBEAFE;
+  --info-text: #1E40AF;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  margin: 0;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Utility classes used by all pages */
+.d-none {
+  display: none !important;
+}
+
+.text-center { text-align: center; }
+.text-muted { color: var(--text-secondary); }
