@@ -3,7 +3,6 @@
 A full-stack wallet management system with Node.js backend and vanilla JavaScript frontend.
 ##  System Architecture
 
-![Architecture Diagram](https://github.com/hariomkhonde108/Wallet_System/blob/main/SmartWallet%20Full-Stack%20Architecture%20%26%20Money%20Flows%20(1).png) 
 
 
 ## 📋 Features
